@@ -1,0 +1,67 @@
+<div class="container mx-auto p-6">
+  <!-- Increased padding for breathing room -->
+  <h1 class="text-3xl font-bold mb-6 text-gray-800">Dashboard</h1>
+  <!-- Larger, darker title with more margin -->
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Increased gap for better separation -->
+
+    <!-- Total Recipes Card -->
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+      <h2 class="text-xl font-semibold text-gray-700">Total Recipes</h2>
+      <p class="text-2xl font-bold text-gray-900 mt-2">{{ totalRecipes }}</p>
+    </div>
+
+    <!-- Recently Added Recipes Card -->
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+      <h2 class="text-xl font-semibold text-gray-700">
+        Recently Added Recipes
+      </h2>
+      <ul class="mt-3 space-y-2 text-gray-600">
+        <li *ngFor="let recipe of recentRecipes" class="flex items-center">
+          <span class="w-2 h-2 bg-gray-400 rounded-full mr-2"></span>
+          {{ recipe.name }}
+          <span class="ml-2 text-sm text-gray-500"
+            >({{ recipe.createdAt | date : "MMM d, yyyy" }})</span
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Category Distribution Chart -->
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">
+        Category Distribution
+      </h2>
+      <ngx-charts-bar-vertical
+        [results]="categoryData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxisLabel]="'Category'"
+        [yAxisLabel]="'Count'"
+        [view]="[400, 300]"
+        [scheme]="'vivid'"
+        [barPadding]="8"
+      ></ngx-charts-bar-vertical>
+    </div>
+
+    <!-- Top Ingredients Chart -->
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-6">
+      <h2 class="text-xl font-semibold text-gray-700 mb-4">Top Ingredients</h2>
+      <ngx-charts-bar-vertical
+        [results]="ingredientData"
+        [xAxis]="true"
+        [yAxis]="true"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxisLabel]="'Ingredient'"
+        [yAxisLabel]="'Frequency'"
+        [view]="[400, 300]"
+        [scheme]="'vivid'"
+        [barPadding]="8"
+      ></ngx-charts-bar-vertical>
+    </div>
+  </div>
+</div>

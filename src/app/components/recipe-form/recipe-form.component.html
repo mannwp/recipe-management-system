@@ -1,0 +1,63 @@
+<div class="container mx-auto p-4">
+  <h1 class="text-2xl font-bold mb-4">
+    {{ editMode ? "Edit Recipe" : "Add Recipe" }}
+  </h1>
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <div>
+      <label class="block">Name</label>
+      <input
+        formControlName="name"
+        class="w-full p-2 border rounded"
+        required
+      />
+    </div>
+    <div>
+      <label class="block">Category</label>
+      <select
+        formControlName="category"
+        class="w-full p-2 border rounded"
+        required
+      >
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </div>
+    <div>
+      <label class="block">Preparation Time (minutes)</label>
+      <input
+        type="number"
+        formControlName="preparationTime"
+        class="w-full p-2 border rounded"
+        required
+        min="1"
+      />
+    </div>
+    <div>
+      <label class="block">Ingredients (one per line)</label>
+      <textarea
+        formControlName="ingredients"
+        class="w-full p-2 border rounded"
+        rows="4"
+        required
+      ></textarea>
+    </div>
+    <div>
+      <label class="block">Instructions</label>
+      <textarea
+        formControlName="instructions"
+        class="w-full p-2 border rounded"
+        rows="4"
+        required
+      ></textarea>
+    </div>
+    <div class="space-x-4">
+      <button
+        type="submit"
+        [disabled]="recipeForm.invalid"
+        class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+      >
+        Save
+      </button>
+      <a routerLink="/recipes" class="text-gray-500 hover:underline">Cancel</a>
+    </div>
+  </form>
+</div>

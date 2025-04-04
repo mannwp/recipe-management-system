@@ -1,0 +1,43 @@
+<div class="container mx-auto p-4">
+  <h2 class="text-2xl font-bold mb-4">Recipes</h2>
+
+  <div *ngIf="errorMessage" class="text-red-500 mb-4">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="recipes.length === 0 && !errorMessage" class="text-gray-500">
+    No recipes available.
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div *ngFor="let recipe of recipes" class="border p-4 rounded shadow">
+      <h3 class="text-xl font-semibold">{{ recipe.name }}</h3>
+      <p><strong>Category:</strong> {{ recipe.category }}</p>
+      <p>
+        <strong>Preparation Time:</strong> {{ recipe.preparationTime }} mins
+      </p>
+      <div class="mt-2 flex space-x-2">
+        <a
+          [routerLink]="['/recipes', recipe.id]"
+          class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600"
+        >
+          View Details
+        </a>
+        <button
+          *ngIf="!(isFavorite(recipe.id) | async)"
+          (click)="addToFavorites(recipe.id)"
+          class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600"
+        >
+          Add to Favorites
+        </button>
+        <button
+          *ngIf="isFavorite(recipe.id) | async"
+          (click)="removeFromFavorites(recipe.id)"
+          class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
+        >
+          Remove from Favorites
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

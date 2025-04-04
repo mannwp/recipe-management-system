@@ -1,0 +1,55 @@
+{
+  "recipes": [
+    {
+      "id": "1",
+      "name": "Pasta",
+      "ingredients": ["pasta"],
+      "instructions": "Boil.",
+      "preparationTime": 20,
+      "category": "Main Course",
+      "createdAt": "2023-10-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Chocolate Cakee",
+      "category": "Dessert",
+      "preparationTime": 45,
+      "ingredients": ["flour", "sugar", "cocoa", "eggs"],
+      "instructions": "Mix ingredients, bake at 350°F for 30 mins.",
+      "createdAt": "2023-10-02T12:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Salad",
+      "category": "Vegetarian",
+      "preparationTime": 15,
+      "ingredients": ["lettuce"],
+      "instructions": "Mix.",
+      "createdAt": "2025-04-04T10:00:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Noodles",
+      "category": "Main Course",
+      "preparationTime": 20,
+      "ingredients": ["noodles", "sauce"],
+      "instructions": "test",
+      "createdAt": "2025-04-04T13:27:54.451Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "user123",
+      "role": "user"
+    }
+  ],
+  "favorites": []
+}
