@@ -3,7 +3,9 @@
     {
       "id": "1",
       "name": "Pasta",
-      "ingredients": ["pasta"],
+      "ingredients": [
+        "pasta"
+      ],
       "instructions": "Boil.",
       "preparationTime": 20,
       "category": "Main Course",
@@ -14,7 +16,12 @@
       "name": "Chocolate Cakee",
       "category": "Dessert",
       "preparationTime": 45,
-      "ingredients": ["flour", "sugar", "cocoa", "eggs"],
+      "ingredients": [
+        "flour",
+        "sugar",
+        "cocoa",
+        "eggs"
+      ],
       "instructions": "Mix ingredients, bake at 350°F for 30 mins.",
       "createdAt": "2023-10-02T12:00:00Z"
     },
@@ -23,7 +30,9 @@
       "name": "Salad",
       "category": "Vegetarian",
       "preparationTime": 15,
-      "ingredients": ["lettuce"],
+      "ingredients": [
+        "lettuce"
+      ],
       "instructions": "Mix.",
       "createdAt": "2025-04-04T10:00:00Z"
     },
@@ -31,10 +40,13 @@
       "id": "4",
       "name": "Noodles",
       "category": "Main Course",
-      "preparationTime": 20,
-      "ingredients": ["noodles", "sauce"],
+      "preparationTime": 25,
+      "ingredients": [
+        "noodles",
+        "sauce"
+      ],
       "instructions": "test",
-      "createdAt": "2025-04-04T13:27:54.451Z"
+      "createdAt": "2025-04-04T13:37:33.939Z"
     }
   ],
   "users": [
